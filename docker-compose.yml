@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  ros2:
+    image: ros2-humble-desktop:latest
+    container_name: ros2_gui
+    environment:
+      - DISPLAY=${DISPLAY}                 # Pass host DISPLAY env
+      - QT_X11_NO_MITSHM=1                 # Fix some Qt issues
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix      # Share X socket
+    network_mode: "host"                   # Optional, for easier networking
+    stdin_open: true
+    tty: true
