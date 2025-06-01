@@ -1,0 +1,31 @@
+services:
+  ros2_turtle_sim_node:
+    image: ros2-humble-desktop:latest
+    container_name: ros2_turtle_sim_gui
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    command: bash -c "source /opt/ros/humble/setup.bash && ros2 run turtlesim turtlesim_node"
+    networks:
+      - ros2_net
+    stdin_open: true
+    tty: true
+
+  ros2_turtle_sim_node_comm:
+    image: ros2-humble-desktop:latest
+    container_name: ros2_turtle_sim_comm
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    networks:
+      - ros2_net
+    stdin_open: true
+    tty: true
+
+networks:
+  ros2_net:
+    driver: bridge
