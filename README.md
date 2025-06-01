@@ -1,2 +1,14 @@
-# ros2-humble-desktop-docker
-Custom Docker image for ROS 2 Humble Hawksbill desktop environment, built on the official ros:humble-ros-base image. Includes full desktop packages like RViz, rqt, and Gazebo dependencies for development and simulation. Easy to build, extend, and run GUI applications inside Docker.
+# ROS 2 Humble Desktop Docker Image
+
+This repository contains a Dockerfile to build a custom ROS 2 Humble desktop image based on the official `ros:humble-ros-base` image.
+
+## Features
+
+- Installs the full `ros-humble-desktop` meta-package
+- Includes GUI tools like RViz, rqt, Gazebo dependencies
+- Lightweight, easy to extend
+
+## Build
+
+```bash
+docker build -t ros2-humble-desktop .
