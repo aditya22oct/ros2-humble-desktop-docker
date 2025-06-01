@@ -1,0 +1,26 @@
+# Ignore Git version control files
+.git
+.gitignore
+
+# Ignore Docker configuration files
+.dockerignore
+
+# Ignore documentation files
+README.md
+LICENSE
+
+# Ignore editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore build artifacts and logs
+build/
+dist/
+*.log
+*.tmp
+
+# Ignore OS-specific junk files
+.DS_Store
+Thumbs.db
