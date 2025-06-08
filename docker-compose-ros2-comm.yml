@@ -1,6 +1,6 @@
 services:
   ros2_turtle_sim_node:
-    image: ros2-humble-desktop:latest
+    image: ${DOCKER_REGISTRY}/ros2_humble_full_desktop:${IMAGE_TAG}
     container_name: ros2_turtle_sim_gui
     environment:
       - DISPLAY=${DISPLAY}
@@ -14,7 +14,7 @@ services:
     tty: true
 
   ros2_turtle_sim_node_comm:
-    image: ros2-humble-desktop:latest
+    image: ${DOCKER_REGISTRY}/ros2_humble_full_desktop:${IMAGE_TAG}
     container_name: ros2_turtle_sim_comm
     environment:
       - DISPLAY=${DISPLAY}

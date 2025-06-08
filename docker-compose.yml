@@ -1,6 +1,6 @@
 services:
   ros2:
-    image: ros2-humble-desktop:latest
+    image: ${DOCKER_REGISTRY}/ros2_humble_full_desktop:${IMAGE_TAG}
     container_name: ros2_gui
     environment:
       - DISPLAY=${DISPLAY}                 # Pass host DISPLAY env
